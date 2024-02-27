@@ -3,7 +3,7 @@ Steps to run:
 1. Start registry
 2. Start student, purchase & receipt services
 3. Create student data 
-POST localhost:8080/student/api/v1/students
+POST localhost:8083/api/v1/students
 {
    "name": "Nasim",
    "grade": "1",
