@@ -1,12 +1,12 @@
 Project Structure:
 skiply -> root folder
- |- api collections and environment variables
- |- api specifications
- |- gateway (API Gateway)
- |- registry (Service Registry)
- |- student service
- |- purchase service
- |- receipt service
+ |- api collections and environment variables  
+ |- api specifications  
+ |- gateway (API Gateway)  
+ |- registry (Service Registry)  
+ |- student service  
+ |- purchase service  
+ |- receipt service  
 
 
 
