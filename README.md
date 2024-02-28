@@ -1,5 +1,5 @@
-Project Structure:
-skiply -> root folder
+Project Structure:  
+skiply -> root folder  
  |- api collections and environment variables  
  |- api specifications  
  |- gateway (API Gateway)  
