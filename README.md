@@ -21,6 +21,3 @@ Steps to run:
 5. Fetch receipt
 6. repeat to add more.
 
-
-Notes:
-Gateway & open-api is not working for now.
