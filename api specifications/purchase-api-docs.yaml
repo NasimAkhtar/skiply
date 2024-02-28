@@ -1,0 +1,130 @@
+openapi: 3.0.1
+info:
+  title: Purchase Api
+  version: v1
+servers:
+- url: http://localhost:8081
+  description: Generated server url
+paths:
+  /api/v1/purchase/{referenceNumber}:
+    get:
+      tags:
+      - purchase-controller
+      operationId: get
+      parameters:
+      - name: referenceNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PurchaseResponse'
+    put:
+      tags:
+      - purchase-controller
+      operationId: update
+      parameters:
+      - name: referenceNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PurchaseResponse'
+  /api/v1/purchase:
+    post:
+      tags:
+      - purchase-controller
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseRequest'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PurchaseResponse'
+components:
+  schemas:
+    ItemRequest:
+      type: object
+      properties:
+        description:
+          type: string
+        count:
+          type: integer
+          format: int32
+        amount:
+          type: number
+          format: double
+    PurchaseRequest:
+      type: object
+      properties:
+        studentId:
+          type: integer
+          format: int64
+        cardNumber:
+          type: string
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemRequest'
+    ItemResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        description:
+          type: string
+        count:
+          type: integer
+          format: int32
+        amount:
+          type: number
+          format: double
+    PurchaseResponse:
+      type: object
+      properties:
+        studentId:
+          type: integer
+          format: int64
+        cardNumber:
+          type: string
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        timestamp:
+          type: string
+        referenceNumber:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemResponse'
