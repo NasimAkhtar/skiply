@@ -7,6 +7,7 @@ import com.skiply.purchase.exception.PurchaseNotFoundException;
 import com.skiply.purchase.model.Item;
 import com.skiply.purchase.model.Purchase;
 import com.skiply.purchase.repository.PurchaseRepository;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,13 @@ public class PurchaseService {
         return buildPurchaseResponse(saved);
     }
 
+    @SneakyThrows
     public PurchaseResponse getPurchase(String referenceNumber) {
         log.info("Fetching purchase with reference number {}", referenceNumber);
+
+        //log.info("wait started.....");
+        //Thread.sleep(10000);
+        //log.info("wait ended...");
 
         Optional<Purchase> purchase = purchaseRepository.findById(referenceNumber);
 

@@ -14,10 +14,10 @@ Steps to run:
 
 1. Start registry
 2. start gateway
-2. Start student, purchase & receipt services  
-   For steps 3-5, Use api collection provided:
-3. Create student data
-4. Create purchase, Use student id from step 3
-5. Fetch receipt
-6. repeat to add more.
+3. Start student, purchase & receipt services  
+   For steps 4-6, Use api collection provided:
+4. Create student data
+5. Create purchase, Use student id from step 3
+6. Fetch receipt
+7. repeat to add more.
 
